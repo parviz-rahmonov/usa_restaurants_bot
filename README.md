@@ -122,48 +122,70 @@ All changes made via the admin panel persist for the lifetime of the process.
 MIT License. See [LICENSE](LICENSE) for details.
 
 usa_restaurants_bot/
+
+├── bot.py                  # Entry point
+
+├── config.py               # Settings loader
+
+├── constants.py            # All strings and callback data
+
 │
-├── bot.py
-├── config.py
-├── constants.py
-├── .env                      
-├── .env.example
-├── .gitignore
-├── requirements.txt
-│
+
 ├── data/
-│   ├── __init__.py
-│   └── restaurants.py
+
+│   └── restaurants.py      # Restaurant data store
+
 │
+
 ├── filters/
-│   ├── __init__.py
-│   ├── admin.py            
-│   └── chat_type.py
+
+│   ├── admin.py            # IsAdminFilter
+
+│   └── chat_type.py        # ChatTypeFilter
+
 │
+
 ├── handlers/
-│   ├── __init__.py
-│   ├── restaurants.py
-│   ├── start.py
-│   ├── states_list.py
+
+│   ├── start.py            # /start command
+
+│   ├── states_list.py      # State selection
+
+│   ├── restaurants.py      # Delivery filter
+
 │   └── admin/
-│       ├── __init__.py
-│       ├── menu.py             ← /admin, back, exit
-│       ├── add.py              ← AddRestaurantFSM
-│       ├── edit.py             ← EditRestaurantFSM
-│       ├── delete.py           ← DeleteRestaurantFSM
-│       └── view.py             ← read-only list
+
+│       ├── menu.py         # /admin command
+
+│       ├── add.py          # Add FSM
+
+│       ├── edit.py         # Edit FSM
+
+│       ├── delete.py       # Delete FSM
+
+│       └── view.py         # View list
+
 │
+
 ├── keyboards/
-│   ├── __init__.py
-│   ├── admin_kb.py
-│   ├── builder.py
-│   ├── restaurants_kb.py
-│   └── states_kb.py
+
+│   ├── builder.py          # Base keyboard builder
+
+│   ├── states_kb.py        # States keyboard
+
+│   ├── restaurants_kb.py   # Restaurants keyboard
+
+│   └── admin_kb.py         # Admin keyboards
+
 │
+
 ├── states/
-│   ├── __init__.py
-│   └── admin_states.py
+
+│   └── admin_states.py     # FSM state groups
+
 │
+
 └── utils/
-    ├── __init__.py
-    └── formatters.py
+
+└── formatters.py       # Text formatters
+
