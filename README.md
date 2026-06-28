@@ -35,6 +35,74 @@ A Telegram bot for exploring restaurants across US states, built with Python 3.1
 
 ## 📁 Project Structure
 
+usa_restaurants_bot/
+
+├── bot.py                  # Entry point
+
+├── config.py               # Settings loader
+
+├── constants.py            # All strings and callback data
+
+│
+
+├── data/
+
+│   └── restaurants.py      # Restaurant data store
+
+│
+
+├── filters/
+
+│   ├── admin.py            # IsAdminFilter
+
+│   └── chat_type.py        # ChatTypeFilter
+
+│
+
+├── handlers/
+
+│   ├── start.py            # /start command
+
+│   ├── states_list.py      # State selection
+
+│   ├── restaurants.py      # Delivery filter
+
+│   └── admin/
+
+│       ├── menu.py         # /admin command
+
+│       ├── add.py          # Add FSM
+
+│       ├── edit.py         # Edit FSM
+
+│       ├── delete.py       # Delete FSM
+
+│       └── view.py         # View list
+
+│
+
+├── keyboards/
+
+│   ├── builder.py          # Base keyboard builder
+
+│   ├── states_kb.py        # States keyboard
+
+│   ├── restaurants_kb.py   # Restaurants keyboard
+
+│   └── admin_kb.py         # Admin keyboards
+
+│
+
+├── states/
+
+│   └── admin_states.py     # FSM state groups
+
+│
+
+└── utils/
+
+└── formatters.py       # Text formatters
+
 ---
 
 ## 🚀 Getting Started
@@ -120,72 +188,4 @@ All changes made via the admin panel persist for the lifetime of the process.
 ## 📄 License
 
 MIT License. See [LICENSE](LICENSE) for details.
-
-usa_restaurants_bot/
-
-├── bot.py                  # Entry point
-
-├── config.py               # Settings loader
-
-├── constants.py            # All strings and callback data
-
-│
-
-├── data/
-
-│   └── restaurants.py      # Restaurant data store
-
-│
-
-├── filters/
-
-│   ├── admin.py            # IsAdminFilter
-
-│   └── chat_type.py        # ChatTypeFilter
-
-│
-
-├── handlers/
-
-│   ├── start.py            # /start command
-
-│   ├── states_list.py      # State selection
-
-│   ├── restaurants.py      # Delivery filter
-
-│   └── admin/
-
-│       ├── menu.py         # /admin command
-
-│       ├── add.py          # Add FSM
-
-│       ├── edit.py         # Edit FSM
-
-│       ├── delete.py       # Delete FSM
-
-│       └── view.py         # View list
-
-│
-
-├── keyboards/
-
-│   ├── builder.py          # Base keyboard builder
-
-│   ├── states_kb.py        # States keyboard
-
-│   ├── restaurants_kb.py   # Restaurants keyboard
-
-│   └── admin_kb.py         # Admin keyboards
-
-│
-
-├── states/
-
-│   └── admin_states.py     # FSM state groups
-
-│
-
-└── utils/
-
-└── formatters.py       # Text formatters
 
